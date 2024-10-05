@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9e94a185-22d5-4aa9-aaa3-4888b1c796a5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Pokemons/Front/4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Pokemons/Front/4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pokemon/Pokemon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pokemon/Pokemon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pokemon/PokemonBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pokemon/PokemonBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pokemon/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pokemon/Pokemon.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -96,6 +99,7 @@
       <updated>1727867114916</updated>
       <workItem from="1727867117953" duration="1395000" />
       <workItem from="1728103068336" duration="2365000" />
+      <workItem from="1728120749740" duration="3885000" />
     </task>
     <servers />
   </component>
