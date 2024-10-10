@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9e94a185-22d5-4aa9-aaa3-4888b1c796a5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battle/dialog-plain.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Battle/dialog-plain.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Pokemons/Charmander.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Resources/Pokemons/Charmander.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pokemon/Pokemon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pokemon/Pokemon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +100,7 @@
       <workItem from="1728103068336" duration="2365000" />
       <workItem from="1728120749740" duration="3885000" />
       <workItem from="1728237683636" duration="4482000" />
+      <workItem from="1728285864632" duration="8265000" />
     </task>
     <servers />
   </component>
