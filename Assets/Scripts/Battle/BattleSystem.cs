@@ -49,6 +49,66 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableActionSelector(false);
         dialogBox.EnableMoveSelector(true);
     }
+
+    public IEnumerator PerformPlayerMove()
+    {
+        state = BattleState.Busy;
+        var move = playerUnit.Pokemon.Moves[currentMove];
+        yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} use {move.Base.Name} !");
+        yield return new WaitForSeconds(1f);
+        DameDetails dameDetails = enemyUnit.Pokemon.TakeDame(move,playerUnit.Pokemon);
+        yield return enemyHub.UpdateHp();
+        yield return ShowDameDetails(dameDetails);
+        if (dameDetails.fainted)
+        {
+            yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.Name} is Fainted !");
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            yield return EnemyMove();
+        }
+    }
+
+    public IEnumerator EnemyMove()
+    {
+        state = BattleState.EnemyMove;
+        var move = enemyUnit.Pokemon.GetRandom();
+        yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.Name} use {move.Base.Name} !");
+        yield return new WaitForSeconds(1f);
+        DameDetails dameDetails = playerUnit.Pokemon.TakeDame(move,playerUnit.Pokemon);
+        yield return playerHub.UpdateHp();
+        yield return ShowDameDetails(dameDetails);
+        if (dameDetails.fainted)
+        {
+            yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} is Fainted !");
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            PlayerAction();
+        }
+    }
+
+    IEnumerator ShowDameDetails(DameDetails dameDetails)
+    {
+        if (dameDetails.critical > 1)
+        {
+            yield return dialogBox.TypeDialog("A critical hit !");
+            yield return new WaitForSeconds(1f);
+        }
+
+        if (dameDetails.type > 1)
+        {
+            yield return dialogBox.TypeDialog("It is super effective");
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            yield return dialogBox.TypeDialog("It is not super effective");
+            yield return new WaitForSeconds(1f);
+        }
+    }
     private void Update()
     {
         if (state == BattleState.PlayerAction)
@@ -73,6 +133,12 @@ public class BattleSystem : MonoBehaviour
             currentMove--;
         currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Pokemon.Moves.Count-1);
         dialogBox.UpdateMovesSelector(currentMove,playerUnit.Pokemon.Moves[currentMove]);
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            dialogBox.EnableMoveSelector(false);
+            dialogBox.EnableDialogText(true);
+            StartCoroutine(PerformPlayerMove());
+        }
     }
     void HandheldActionSelector()
     {

@@ -42,4 +42,46 @@ public class Pokemon
     public int MaxHp{
         get { return Mathf.FloorToInt((Base.MaxHp * Level) / 100f) + 10; }
     }
+
+    public DameDetails TakeDame(Move move,Pokemon attacker)
+    {
+        float critical = 1f;
+        if (Random.value * 100 <= 6.5f)
+            critical = 2;
+        float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type1) *
+                     TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type2);
+        DameDetails dameDetails = new DameDetails()
+        {
+            fainted = false,
+            critical = critical,
+            type = type,
+
+        };
+        float modifiers = Random.Range(0.85f, 1f) * type;
+        float a = (2 * attacker.Level + 10) / 250f;
+        float d = a * move.Base.Power * ((float)attacker.Attack / Defence) + 2;
+        int dame = Mathf.FloorToInt(d * modifiers);
+        Hp -= dame;
+        if (Hp <= 0)
+        {
+            Hp = 0;
+            dameDetails.fainted = true;
+        }
+
+        return dameDetails;
+    }
+
+    public Move GetRandom()
+    {
+        int r = Random.Range(0, Moves.Count);
+        return Moves[r];
+    }
 }
+
+public class DameDetails
+{
+    public bool fainted { get; set; }
+    public float critical { get; set; }
+    public float type { get; set; }
+}
+

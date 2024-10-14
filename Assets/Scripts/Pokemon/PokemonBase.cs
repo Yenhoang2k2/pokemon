@@ -90,3 +90,26 @@ public enum PokemonType
     Ghost,
     Dragon
 }
+
+public class TypeChart
+{
+    private static float[][] _chart =
+    {
+        //                      NOR  FIR  WAT  ELE  GRA  ICE  FIG  POI
+        /* NOR */ new float[] { 1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f },
+        /* FIR */ new float[] { 1f,  0.5f,0.5f,1f,  2f,  2f,  1f,  1f },
+        /* WAT */ new float[] { 1f,  2f,  0.5f,2f,  0.5f,1f,  1f,  1f },
+        /* GRA */ new float[] { 1f,  1f,  2f,  0.5f,0.5f,2f,  1f,  1f },
+        /* ICE */ new float[] { 1f,  0.5f,2f,  2f,  0.5f,1f,  1f,  0.5f },
+        /* FIG */ new float[] { 1f,  1f,  1f,  1f,  2f,  1f,  1f,  1f }
+    };
+
+    public static float GetEffectiveness( PokemonType attackType, PokemonType defencetype)
+    {
+        if (attackType == PokemonType.None || defencetype == PokemonType.None)
+            return 1f;
+        int row = (int)attackType - 1;
+        int col = (int)defencetype - 1;
+        return _chart[row][col];
+    }
+}
