@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e94a185-22d5-4aa9-aaa3-4888b1c796a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.pokemon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleDialogBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleDialogBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/BattleSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +101,7 @@
       <workItem from="1728120749740" duration="3885000" />
       <workItem from="1728237683636" duration="4482000" />
       <workItem from="1728285864632" duration="8265000" />
+      <workItem from="1728866441044" duration="1209000" />
     </task>
     <servers />
   </component>

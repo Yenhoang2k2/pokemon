@@ -62,7 +62,7 @@ public class BattleDialogBox : MonoBehaviour
                 actionTexts[i].color = Color.black;
         }
     }
-    public void UpdateMovesSelector(int currentSelector)
+    public void UpdateMovesSelector(int currentSelector,Move move)
     {
         for (int i = 0; i < moveTexts.Count; ++i)
         {
@@ -71,10 +71,23 @@ public class BattleDialogBox : MonoBehaviour
             else
                 moveTexts[i].color = Color.black;
         }
+
+        ppText.text = $"PP {move.PP}/{move.Base.Pp}";
+        typeText.text = move.Base.Type.ToString();
     }
 
     public void SetNameMove(List<Move> moves)
     {
-        for()
+        for (int i = 0; i < moveTexts.Count; i++)
+        {
+            if (i < moves.Count)
+            {
+                moveTexts[i].text = moves[i].Base.Name;
+            }
+            else
+            {
+                moveTexts[i].text = "-";
+            }
+        }
     }
 }

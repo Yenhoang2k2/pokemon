@@ -26,6 +26,9 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.SetUp();
         playerHub.SetData(playerUnit.Pokemon);
         enemyHub.SetData(enemyUnit.Pokemon);
+        
+        dialogBox.SetNameMove(playerUnit.Pokemon.Moves);
+        
         yield return dialogBox.TypeDialog($"A wild {playerUnit.Pokemon.Base.Name} appeared !");
         yield return new WaitForSeconds(1f);
         
@@ -68,8 +71,8 @@ public class BattleSystem : MonoBehaviour
             currentMove++;
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
             currentMove--;
-        currentMove = Mathf.Clamp(currentMove, 0, 3);
-        dialogBox.UpdateMovesSelector(currentMove);
+        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Pokemon.Moves.Count-1);
+        dialogBox.UpdateMovesSelector(currentMove,playerUnit.Pokemon.Moves[currentMove]);
     }
     void HandheldActionSelector()
     {
